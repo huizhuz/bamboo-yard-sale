@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/database";
+require("firebase/firestore");
 
 const config = {
   apiKey: "AIzaSyAN3hcjA2S86mXyXWty1MeVxu0j417mbcw",
@@ -13,14 +14,5 @@ const config = {
 
 // Initialize Firebase
 firebase.initializeApp(config);
-const db = firebase.database();
-
-
-// async function getCities(db) {
-//   const citiesCol = collection(db, 'cities');
-//   const citySnapshot = await getDocs(citiesCol);
-//   const cityList = citySnapshot.docs.map(doc => doc.data());
-//   return cityList;
-// }
-
+const db = firebase.firestore();
 export default db;

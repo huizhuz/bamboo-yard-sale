@@ -1,10 +1,14 @@
 import './App.css';
+import { Provider } from 'react-redux';
+import { yardSaleStore } from './redux/store';
+import ProductList from './screens/productList';
 
 function App() {
+  
   return (
-    <div>
-      <p>hi</p>
-    </div>
+    <Provider store={yardSaleStore}>
+      <ProductList></ProductList>
+    </Provider>
   );
 }
 
