@@ -11,4 +11,5 @@ export interface ProductListItem {
   itemId: string;
   displayName: string;
   adoptionFee: number;
+  imageUrls?: string[];
 }
