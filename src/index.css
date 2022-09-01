@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Bunny';
+  src: local('Bunny'), url(./assets/fonts/bunny.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Cheese';
+  src: local('Cheese'), url(./assets/fonts/cheese.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'FingerPaint';
+  src: local('FingerPaint'), url(./assets/fonts/FingerPaint.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'PoiretOne';
+  src: local('PoiretOne'), url(./assets/fonts/PoiretOne.ttf) format('truetype');
+}
