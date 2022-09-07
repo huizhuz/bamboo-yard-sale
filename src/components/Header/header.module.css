@@ -1,0 +1,48 @@
+h1 {
+  margin: 0;
+  color: #6883BC;
+}
+
+.container {
+  width: 100vw;
+  height: 200px;
+  background-color: #FCEDDA;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.innerContainer {
+  width: 70%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.header1 {
+  font-family: titleFont;
+  font-size: 48px;
+}
+
+.header2 {
+  font-size: 22px;
+  font-family: titleFont;
+  /* color: #EE4E34; */
+  color: #97BC62FF
+}
+
+.header3 {
+  font-family: Bunny;
+  font-size: 38px;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .innerContainer {
+    width: 70%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+  }
+}

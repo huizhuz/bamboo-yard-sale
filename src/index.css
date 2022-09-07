@@ -18,8 +18,8 @@ code {
 }
 
 @font-face {
-  font-family: 'Cheese';
-  src: local('Cheese'), url(./assets/fonts/cheese.ttf) format('truetype');
+  font-family: 'ultraThin';
+  src: local('ultraThin'), url(./assets/fonts/ultraThin.ttf) format('truetype');
 }
 
 @font-face {
@@ -30,4 +30,9 @@ code {
 @font-face {
   font-family: 'PoiretOne';
   src: local('PoiretOne'), url(./assets/fonts/PoiretOne.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'titleFont';
+  src: local('titleFont'), url(./assets/fonts/titleFont.ttf) format('truetype');
 }
