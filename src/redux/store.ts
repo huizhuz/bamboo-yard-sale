@@ -19,4 +19,12 @@ export interface ProductListItem {
   filterBy?: FilterBy;
 }
 
-export type FilterBy = '乐器' | '玩具' | '厨具' | '电器' | '家具' | '书' | '';
+export enum FilterBy {
+  instruments = '乐器',
+  toys = '玩具',
+  kitchenUtil = '厨具',
+  appliances = '电器',
+  furniture = '家具',
+  books = '书',
+  all = '全部'
+}
