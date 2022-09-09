@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/bamboo-yard-sale/static/css/main.004b7f44.css",
+    "main.js": "/bamboo-yard-sale/static/js/main.985e5879.js",
+    "static/js/787.6babacd7.chunk.js": "/bamboo-yard-sale/static/js/787.6babacd7.chunk.js",
+    "static/media/titleFont.ttf": "/bamboo-yard-sale/static/media/titleFont.b222bd2313f49ed94ff4.ttf",
+    "static/media/RoundEdge.ttf": "/bamboo-yard-sale/static/media/RoundEdge.63c41cdee1c4499659f3.ttf",
+    "static/media/bunny.ttf": "/bamboo-yard-sale/static/media/bunny.762b64fface6d8af79ad.ttf",
+    "static/media/ultraThin.ttf": "/bamboo-yard-sale/static/media/ultraThin.20220258e851a04a8647.ttf",
+    "static/media/FingerPaint.ttf": "/bamboo-yard-sale/static/media/FingerPaint.3c3a9cdbff527a1cdb37.ttf",
+    "static/media/PoiretOne.ttf": "/bamboo-yard-sale/static/media/PoiretOne.9bf109e97f6294c6fe2b.ttf",
+    "index.html": "/bamboo-yard-sale/index.html",
+    "main.004b7f44.css.map": "/bamboo-yard-sale/static/css/main.004b7f44.css.map",
+    "main.985e5879.js.map": "/bamboo-yard-sale/static/js/main.985e5879.js.map",
+    "787.6babacd7.chunk.js.map": "/bamboo-yard-sale/static/js/787.6babacd7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.004b7f44.css",
+    "static/js/main.985e5879.js"
+  ]
+}
