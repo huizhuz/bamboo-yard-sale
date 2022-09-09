@@ -11,6 +11,7 @@ export const normalizeYardSaleStore = async (data: any): Promise<YardSaleStore> 
     const description = item?.description || '';
     const description2 = item?.description2 || '';
     const description3 = item?.description3 || '';
+    const filterBy = item?.filterBy || '';
     const sold = !!item?.sold;
     const imageUrls: string[] = [];
     const imagePaths = await datasource.getImagePaths(item);
@@ -29,7 +30,8 @@ export const normalizeYardSaleStore = async (data: any): Promise<YardSaleStore> 
       description2,
       description3,
       sold,
-      imageUrls
+      imageUrls,
+      filterBy
     };
 
     productList.push(productListItem);

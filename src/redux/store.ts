@@ -16,4 +16,7 @@ export interface ProductListItem {
   description3?: string;
   sold: boolean;
   imageUrls?: string[];
+  filterBy?: FilterBy;
 }
+
+export type FilterBy = '乐器' | '玩具' | '厨具' | '电器' | '家具' | '书' | '';
