@@ -7,6 +7,10 @@ export interface YardSaleStore {
   productList: ProductListItem[];
 }
 
+export interface PageStore {
+  isloading: boolean;
+}
+
 export interface ProductListItem {
   itemId: string;
   displayName: string;

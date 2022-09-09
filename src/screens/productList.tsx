@@ -1,10 +1,11 @@
 import { FC, useEffect, useState } from 'react';
 import ProductItem from '../components/ProductItem/ProductItem';
-import withStore, { YardSaleProps } from '../redux/providers/provider';
+import withStore, { AppProps } from '../redux/providers/provider';
 import { FilterBy } from '../redux/store';
 import styles from './styles/productList.module.css';
+import LoadingIcons from 'react-loading-icons';
 
-export interface ProductListPageProps extends YardSaleProps {
+export interface ProductListPageProps extends AppProps {
 }
 
 const ProductList: FC<ProductListPageProps> = props => {
@@ -37,7 +38,7 @@ const ProductList: FC<ProductListPageProps> = props => {
       <div className={styles.filterContainer}>
         <>
           <button className={styles.filterButton} onClick={resetFilter}>{FilterBy.all}</button>
-          <span style={{fontFamily: 'ultrathin'}}> | </span>
+          <span style={{ fontFamily: 'ultrathin' }}> | </span>
         </>
         {filterMapKeys.map((filterName, index) => {
           const setFilterOnClick = () => {
@@ -51,7 +52,7 @@ const ProductList: FC<ProductListPageProps> = props => {
                 onClick={setFilterOnClick}>
                 {filterName}
               </button>
-              {index !== filterMapKeys.length - 1 && <span style={{fontFamily: 'ultrathin'}}> | </span>}
+              {index !== filterMapKeys.length - 1 && <span style={{ fontFamily: 'ultrathin' }}> | </span>}
             </>
           )
         })}
@@ -66,16 +67,30 @@ const ProductList: FC<ProductListPageProps> = props => {
       .map((product, index) => <ProductItem product={product} key={index} />)
   }
 
-  return (
-    <div className={styles.pageContainer}>
-      <div className={styles.innerWrapper}>
-        {renderFilterPicker()}
-        <div className={styles.grid}>
-          {renderProductByFilter(filterBy)}
+  const renderContent = () => {
+    return (
+      <div className={styles.pageContainer}>
+        <div className={styles.innerWrapper}>
+          {renderFilterPicker()}
+          <div className={styles.grid}>
+            {renderProductByFilter(filterBy)}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    )
+  }
+
+  const showLoading = () => {
+    return (
+      <div className={styles.pageContainer}>
+        <LoadingIcons.Puff stroke="#6F79A7" strokeOpacity={.125} speed={.75} />
+      </div>
+    )
+  }
+
+  const content = props.pageStore.isloading ? showLoading() : renderContent();
+
+  return content;
 }
 
 

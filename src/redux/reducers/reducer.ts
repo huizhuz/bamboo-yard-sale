@@ -1,13 +1,16 @@
 import { combineReducers } from 'redux';
-import { YardSaleStore } from "../store";
+import { PageStore, YardSaleStore } from "../store";
+import pageStoreReducer from './pageStoreReducer';
 import yardSaleReducer from "./yardSaleReducer";
 
 export interface CombinedStore {
   yardSaleStore: YardSaleStore;
+  pageStore: PageStore;
 }
 
 const combinedReducers = combineReducers({
-  yardSaleStore: yardSaleReducer
+  yardSaleStore: yardSaleReducer,
+  pageStore: pageStoreReducer
 });
 
 

@@ -1,5 +1,5 @@
  .itemContainer {
-  width: 320px;
+  max-width: 300px;
   padding: 20px;
   margin: 20px 10px 20px 10px;
   border: '1px solid transparent';
@@ -7,9 +7,10 @@
   border-radius: 20px;
 }
 
+
 .imageWrapper {
-  height: 280px;
-  width: 280px;
+  height: 250px;
+  width: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,13 +18,13 @@
 }
 
 .img {
-  height: 280px;
+  height: 250px;
   margin: 10px;
 }
 
 
 .thumbnailsImageWrapper {
-  height: 35px;
+  height: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +32,7 @@
 }
 
 .thumbnailsImage {
-  height: 35px;
+  height: 30px;
 }
 
 
@@ -49,6 +50,7 @@
   border: none;
   padding: 0;
   margin: 16px 0 16px 0;
+  color: black;
 }
 
 .collapsed {

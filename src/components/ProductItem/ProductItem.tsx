@@ -31,6 +31,7 @@ const ProductItem: FC<ProductListItemProps> = props => {
   return (
     <div className={styles.itemContainer}>
       <Carousel
+        draggable={false}
         value={imageIndex}
         slides={imgUrls?.map((url, index) => {
           return (

@@ -11,7 +11,6 @@ const initialState: YardSaleStore = {
 
 export type YardSaleAction = 'UPDATE_PRODUCT_LIST';
 
-// tslint:disable-next-line:cyclomatic-complexity
 const yardSaleReducer = (
   yardSaleStore: YardSaleStore = initialState,
   action: {type: YardSaleAction, data?: YardSaleStore}

@@ -1,12 +1,12 @@
 h1 {
   margin: 0;
-  color: #6883BC;
+  color: #6F79A7;
 }
 
 .container {
   width: 100vw;
   height: 200px;
-  background-color: #FCEDDA;
+  background-color: #F3D9DC;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -29,7 +29,7 @@ h1 {
   font-size: 22px;
   font-family: titleFont;
   /* color: #EE4E34; */
-  color: #97BC62FF
+  color: #9D6566
 }
 
 .header3 {
