@@ -8,6 +8,10 @@ export const normalizeYardSaleStore = async (data: any): Promise<YardSaleStore> 
     const itemId = doc?.id|| '';
     const displayName = item?.displayName || '';
     const adoptionFee = item?.adoptionFee || 0;
+    const description = item?.description || '';
+    const description2 = item?.description2 || '';
+    const description3 = item?.description3 || '';
+    const sold = !!item?.sold;
     const imageUrls: string[] = [];
     const imagePaths = await datasource.getImagePaths(item);
     for (let imagePath of imagePaths) {
@@ -21,6 +25,10 @@ export const normalizeYardSaleStore = async (data: any): Promise<YardSaleStore> 
       itemId,
       displayName,
       adoptionFee,
+      description,
+      description2,
+      description3,
+      sold,
       imageUrls
     };
 

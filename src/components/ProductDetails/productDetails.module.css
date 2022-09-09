@@ -2,8 +2,9 @@
   
 }
 
-.itemPrice {
-  font-family: ultraThin;
-  color: darkslategray;
+.details {
+  font-family: RoundEdge;
+  color: #002222;
   margin: 16px 0 0 0;
+  line-height: 150%;
 }

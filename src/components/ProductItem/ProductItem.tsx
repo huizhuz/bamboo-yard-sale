@@ -29,13 +29,12 @@ const ProductItem: FC<ProductListItemProps> = props => {
   const imgUrls = product.imageUrls;
 
   return (
-    <div className={styles.itemContainer} key={product.itemId}>
+    <div className={styles.itemContainer}>
       <Carousel
-        plugins={['infinite']}
         value={imageIndex}
         slides={imgUrls?.map((url, index) => {
           return (
-            <div className={styles.imageWrapper} key={index}>
+            <div className={styles.imageWrapper} key={`image-${index}`}>
               <img className={styles.img} src={url}></img>
             </div>
           )
@@ -43,7 +42,18 @@ const ProductItem: FC<ProductListItemProps> = props => {
         onChange={onChange}
       >
       </Carousel>
-      <Dots value={imageIndex} onChange={onChange} number={imgUrls?.length} />
+      <Dots
+        value={imageIndex}
+        onChange={onChange}
+        number={imgUrls?.length}
+        thumbnails={imgUrls?.map((url, index) => {
+          return (
+            <div className={styles.thumbnailsImageWrapper} key={`thumbnail-${index}`}>
+              <img className={styles.thumbnailsImage} src={url}></img>
+            </div>
+          )
+        })}
+      />
 
       <h2 className={styles.itemLabel}>{product.displayName}</h2>
       <button

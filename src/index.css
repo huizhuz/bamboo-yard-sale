@@ -36,3 +36,10 @@ code {
   font-family: 'titleFont';
   src: local('titleFont'), url(./assets/fonts/titleFont.ttf) format('truetype');
 }
+
+
+@font-face {
+  font-family: 'RoundEdge';
+  src: local('RoundEdge'), url(./assets/fonts/RoundEdge.ttf) format('truetype');
+}
+

@@ -11,5 +11,9 @@ export interface ProductListItem {
   itemId: string;
   displayName: string;
   adoptionFee: number;
+  description: string;
+  description2?: string;
+  description3?: string;
+  sold: boolean;
   imageUrls?: string[];
 }

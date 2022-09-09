@@ -21,6 +21,20 @@
   margin: 10px;
 }
 
+
+.thumbnailsImageWrapper {
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.thumbnailsImage {
+  height: 35px;
+}
+
+
 .itemLabel {
   font-family: ultraThin;
   font-weight: 600;
@@ -39,9 +53,9 @@
 
 .collapsed {
   margin-right: 8px;
+  transform: rotate(90deg);
 }
 
 .expanded {
   margin-right: 8px;
-  rotate: 90;
 }
