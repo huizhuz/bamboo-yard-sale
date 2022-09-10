@@ -18,6 +18,9 @@ const ProductDetails: FC<ProductDetailsProps> = props => {
       {!!product.description2 && (
         <p className={styles.details}>{product.description2}</p>
       )}
+      {!!product.description3 && (
+        <p className={styles.details}>{product.description3}</p>
+      )}
     </div>
   );
 }

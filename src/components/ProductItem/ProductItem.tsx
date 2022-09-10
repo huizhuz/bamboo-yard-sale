@@ -65,6 +65,7 @@ const ProductItem: FC<ProductListItemProps> = props => {
         <span>{'让我瞧瞧'}</span>
       </button>
       {showDetails && <ProductDetails product={product}/>}
+      {product.sold && <div className={styles.soldOutOverlay} />}
     </div>
   );
 }
