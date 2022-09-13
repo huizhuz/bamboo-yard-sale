@@ -11,13 +11,21 @@ h1 {
   align-items: center;
   display: flex;
   margin-bottom: 32px;
+  position: fixed;
+}
+
+.navContainer {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .innerContainer {
-  width: 70%;
   align-self: center;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
 }
 
 .header1 {
@@ -34,15 +42,99 @@ h1 {
 
 .header3 {
   font-family: Bunny;
-  font-size: 38px;
+  font-size: 22px;
+  margin-left: 8px;
+  margin-bottom: 2px;
 }
 
+.bars {
+  color: #6F79A7;
+  width: 18px;
+  height: 18px;
+}
 
-@media only screen and (min-width: 600px) {
+.navButton {
+  background-color: transparent;
+  border: none;
+  padding: 16px;
+  padding-right: 0;
+}
+
+.collapse {
+  animation: collapse 1s ease-in;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.appear {
+  animation: appear 1s ease-in;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.zoom {
+  animation: zoom 1s ease-in;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.zoom2 {
+  animation: zoom2 1s ease-in;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes collapse {
+  0% {
+    height: 200px;
+  }
+  100% {
+    height: 80px;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    font-size: 48px;
+  }
+  100% {
+    font-size: 36px;
+  }
+}
+
+@keyframes zoom2 {
+  0% {
+    font-size: 22px;
+  }
+  100% {
+    font-size: 16px;
+  }
+}
+
+/* @media only screen and (min-width: 600px) {
   .innerContainer {
     width: 70%;
     align-self: center;
     display: flex;
     flex-direction: row;
   }
-}
+} */

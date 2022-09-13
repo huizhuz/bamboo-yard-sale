@@ -4,6 +4,10 @@ import { yardSaleStore } from './redux/store';
 import ProductList from './screens/productList';
 
 function App() {
+
+  window.addEventListener('scroll', () => {
+    document.body.style.setProperty('--scroll', (window.pageYOffset / 200).toString());
+  }, false);
   
   return (
     <Provider store={yardSaleStore}>
