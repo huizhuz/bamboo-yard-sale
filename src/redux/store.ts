@@ -32,5 +32,6 @@ export enum FilterBy {
   appliances = '电器',
   furniture = '家具',
   books = '书',
+  ornaments = '摆件',
   all = '全部'
 }

@@ -4,7 +4,9 @@ import { ImageResponse } from "./types";
 
 export default class datasource {
   static async getProducts(startAt?: number, endAt?: number): Promise<any[]> {
-    const productRef = db.collection("product").orderBy("itemId").startAt(startAt || 0).endAt(endAt || 10);
+    const productRef = db.collection("product")
+      .where('show', '==', true)
+      .orderBy("itemId").startAt(startAt || 0).endAt(endAt || 10);
     const productCollection = await productRef.get();
     const docs = productCollection.docs;
 
