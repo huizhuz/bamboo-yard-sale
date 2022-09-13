@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --headerBackground: #9B6F62;
+  --titleColor1: #FFF8E8;;
+  --titleColor2: white;
+  --detailsColor: #47322B;
 }
 
 code {
@@ -37,9 +41,9 @@ code {
   src: local('titleFont'), url(./assets/fonts/titleFont.ttf) format('truetype');
 }
 
-
 @font-face {
   font-family: 'RoundEdge';
   src: local('RoundEdge'), url(./assets/fonts/RoundEdge.ttf) format('truetype');
 }
+
 

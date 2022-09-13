@@ -1,17 +1,18 @@
 h1 {
   margin: 0;
-  color: #6F79A7;
+  color: var(--titleColor1);
 }
 
 .container {
   width: 100vw;
   height: 200px;
-  background-color: #F3D9DC;
+  background-color: var(--headerBackground);
   justify-content: center;
   align-items: center;
   display: flex;
   margin-bottom: 32px;
   position: fixed;
+  z-index: 100;
 }
 
 .navContainer {
@@ -36,8 +37,7 @@ h1 {
 .header2 {
   font-size: 22px;
   font-family: titleFont;
-  /* color: #EE4E34; */
-  color: #9D6566
+  color: var(--titleColor2);
 }
 
 .header3 {
@@ -48,7 +48,7 @@ h1 {
 }
 
 .bars {
-  color: #6F79A7;
+  color: var(--titleColor1);
   width: 18px;
   height: 18px;
 }

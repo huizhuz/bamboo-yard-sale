@@ -1,6 +1,6 @@
 .details {
   font-family: RoundEdge;
-  color: #47322B;
+  color: var(--detailsColor);
   margin: 16px 0 0 0;
   line-height: 150%;
 }
