@@ -1,9 +1,26 @@
 import db, { storage } from "../firebase";
+import { FilterBy } from "../redux/store";
 import { ImageResponse } from "./types";
 
 export default class datasource {
-  static async getProducts(): Promise<any[]> {
-    return (await db.collection("product").get()).docs;
+  static async getProducts(startAt?: number, endAt?: number): Promise<any[]> {
+    const productRef = db.collection("product").orderBy("itemId").startAt(startAt || 0).endAt(endAt || 10);
+    const productCollection = await productRef.get();
+    const docs = productCollection.docs;
+
+    return docs;
+  }
+
+  static async getProductsByFilter(filter: FilterBy): Promise<any[]> {
+    const productRef = db.collection("product").where("filterBy", "==", filter);
+    const productCollection = await productRef.get();
+    const docs = productCollection.docs;
+
+    // console.log('productRef', productRef);
+    // console.log('productCollection', productCollection);
+    // console.log('docs', docs);
+
+    return docs;
   }
 
   static async getImagePaths(item: any): Promise<string[]> {

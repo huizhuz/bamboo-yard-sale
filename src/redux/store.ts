@@ -19,7 +19,9 @@ export interface ProductListItem {
   description2?: string;
   description3?: string;
   sold: boolean;
-  imageUrls?: string[];
+  imageUrls: string[];
+  imagePaths?: string[];
+  heroImageUrl?: string;
   filterBy?: FilterBy;
 }
 

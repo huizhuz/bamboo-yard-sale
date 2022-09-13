@@ -1,0 +1,37 @@
+.imageWrapper {
+  height: 220px;
+  width: 250px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.img {
+  height: 220px;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+
+.thumbnailsImageWrapper {
+  height: 28px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.thumbnailsImage {
+  height: 30px;
+}
+
+.loadingIconContainer {
+  height: 258px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -19,35 +19,15 @@
 }
 
 .imageWrapper {
-  height: 220px;
-  width: 250px;
+  width: 300px;
+  height: auto;
   border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 }
 
-.img {
-  height: 220px;
-  margin: 10px;
-  border-radius: 20px;
+.heroImage {
+  width: 300px;
 }
-
-
-.thumbnailsImageWrapper {
-  height: 28px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.thumbnailsImage {
-  height: 30px;
-}
-
 
 .itemLabel {
   font-family: ultraThin;

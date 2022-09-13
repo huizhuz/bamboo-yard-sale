@@ -64,7 +64,15 @@ const ProductList: FC<ProductListPageProps> = props => {
   const renderProductByFilter = (filterBy: FilterBy) => {
     return productList
       ?.filter(product => product.filterBy === filterBy || filterBy === FilterBy.all)
-      .map((product, index) => <ProductItem product={product} key={index} />)
+      .map((product, index) => {
+        return (
+          <ProductItem
+            product={product}
+            key={index}
+            retrieveImgUrls={props.retrieveImgUrls}
+          />
+        )
+      })
   }
 
   const renderContent = () => {

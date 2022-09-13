@@ -5,7 +5,7 @@ export const normalizeYardSaleStore = async (data: any): Promise<YardSaleStore> 
   const productList = [] as ProductListItem[];
   for (let doc of data) {
     const item = doc?.data();
-    const itemId = doc?.id|| '';
+    const itemId = doc?.id || '';
     const displayName = item?.displayName || '';
     const adoptionFee = item?.adoptionFee || 0;
     const description = item?.description || '';
@@ -13,12 +13,17 @@ export const normalizeYardSaleStore = async (data: any): Promise<YardSaleStore> 
     const description3 = item?.description3 || '';
     const filterBy = item?.filterBy || '';
     const sold = !!item?.sold;
+    let heroImageUrl: string | undefined;
     const imageUrls: string[] = [];
     const imagePaths = await datasource.getImagePaths(item);
-    for (let imagePath of imagePaths) {
-      const imageRes = await datasource.getImageUrl(imagePath);
+
+
+    // Retrieving all images at once is time consuming, so just retrive the hero image instead.
+    const heroImagePath = imagePaths.find(path => path.includes('_1'));
+    if (heroImagePath) {
+      const imageRes = await datasource.getImageUrl(heroImagePath);
       if (imageRes.success && imageRes.url) {
-        imageUrls.push(imageRes.url);
+        heroImageUrl = imageRes.url;
       }
     }
 
@@ -31,11 +36,13 @@ export const normalizeYardSaleStore = async (data: any): Promise<YardSaleStore> 
       description3,
       sold,
       imageUrls,
+      heroImageUrl,
+      imagePaths,
       filterBy
     };
 
     productList.push(productListItem);
   }
-  const normalizedStore = {productList} as YardSaleStore;
+  const normalizedStore = { productList } as YardSaleStore;
   return normalizedStore;
 }
