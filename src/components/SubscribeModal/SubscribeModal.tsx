@@ -34,36 +34,23 @@ const initialFormValues: SubscribeModalFormValues = {
 const SubscribeModal: FC<SubscribeModalProps> = props => {
   const { product, closeModal, messageBody } = props;
 
-  const [formValues, setFormValues] = useState({...initialFormValues, comments: messageBody || ''});
-
-  const sendEmail = async (emailPayload: EmailPayload) => {
-    // TODO: integrate email service
-    setTimeout(() => { console.log('emailPayload', emailPayload) }, 200);
-  }
+  const [formValues, setFormValues] = useState({ ...initialFormValues, comments: messageBody || '' });
 
   const onSubmit = (event: any) => {
-    event.preventDefault();
-    sendEmail({
-      itemName: product.displayName,
-      adoptionFee: product.adoptionFee,
-      name: formValues.name,
-      email: formValues.email,
-      comments: formValues.comments
-    }).then(res => {
-      const subscriptionInfo: SubscriptionInfo = JSON.parse(window.sessionStorage.getItem('subscriptionInfo') || 'null');
-      const updatedSubscriptionInfo: SubscriptionInfo = [];
-      subscriptionInfo?.forEach(item => {
-        if (!item[product.itemId]) {
-          updatedSubscriptionInfo.push(item);
-        }
-      })
-      const updatedItem: SubscriptionMap = {
-        [product.itemId]: true
-      };
-      updatedSubscriptionInfo.push(updatedItem);
-      window.sessionStorage.setItem('subscriptionInfo', JSON.stringify(updatedSubscriptionInfo));
-      closeModal();
+    // event.preventDefault();
+    const subscriptionInfo: SubscriptionInfo = JSON.parse(window.sessionStorage.getItem('subscriptionInfo') || 'null');
+    const updatedSubscriptionInfo: SubscriptionInfo = [];
+    subscriptionInfo?.forEach(item => {
+      if (!item[product.itemId]) {
+        updatedSubscriptionInfo.push(item);
+      }
     })
+    const updatedItem: SubscriptionMap = {
+      [product.itemId]: true
+    };
+    updatedSubscriptionInfo.push(updatedItem);
+    window.sessionStorage.setItem('subscriptionInfo', JSON.stringify(updatedSubscriptionInfo));
+    closeModal();
   }
 
   const updateName = (event: any) => {
@@ -86,6 +73,13 @@ const SubscribeModal: FC<SubscribeModalProps> = props => {
       comments: event.target.value
     })
   }
+
+  const emailBody = `
+    ${formValues.comments}%0D%0A
+    ---%0D%0A
+    ${formValues.name}%0D%0A
+    ${formValues.email}%0D%0A
+  `
 
   return (
     <Modal closeModal={closeModal}>
@@ -120,7 +114,12 @@ const SubscribeModal: FC<SubscribeModalProps> = props => {
           </div>
 
           <div className={styles.buttonWrapper}>
-            <button className={styles.sendButton} onClick={onSubmit}>发送</button>
+            <a href={`mailto:emailaddress?subject=询问${product.displayName}&body=${emailBody}`}
+              className={styles.sendButton}
+              onClick={onSubmit}
+            >
+              发送
+            </a>
             <button className={styles.cancelButton} onClick={closeModal}>取消</button>
           </div>
         </fieldset>

@@ -30,7 +30,8 @@
   align-items: center;
   background-color: transparent;
   border: none;
-  padding: 0;
+  padding: 16px;
+  padding-left: 0;
   margin: 16px 0 16px 0;
   color: black;
 }

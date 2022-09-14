@@ -58,6 +58,10 @@ textarea {
   border: none;
   color: var(--titleColor2);
   font-family: 'RoundEdge';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 .cancelButton {
