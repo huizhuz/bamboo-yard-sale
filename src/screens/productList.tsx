@@ -90,7 +90,7 @@ const ProductList: FC<ProductListPageProps> = props => {
 
   const showLoading = () => {
     return (
-      <div className={styles.pageContainer}>
+      <div className={styles.loadingIconContainer}>
         <LoadingIcons.Puff stroke="#6F79A7" strokeOpacity={.125} speed={.75} />
       </div>
     )

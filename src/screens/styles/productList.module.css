@@ -4,6 +4,13 @@
   justify-content: center;
 }
 
+.loadingIconContainer {
+  padding-top: 250px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
 .innerWrapper {
   display: flex;
   flex-direction: column;
