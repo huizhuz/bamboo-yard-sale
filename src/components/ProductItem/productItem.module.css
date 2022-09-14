@@ -7,17 +7,6 @@
   border-radius: 20px;
 }
 
-.soldOutOverlay {
-  position: relative;
-  left: -20px;
-  top: calc(-100% - 20px);
-  height: calc(100% + 40px);
-  width: calc(100% + 40px);
-  z-index: 99;
-  background-color: #aaaaaa70;
-  border-radius: 20px;
-}
-
 .imageWrapper {
   width: 300px;
   height: auto;

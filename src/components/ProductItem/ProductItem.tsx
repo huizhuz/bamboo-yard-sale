@@ -42,7 +42,6 @@ const ProductItem: FC<ProductListItemProps> = props => {
           retrieveImgUrls={props.retrieveImgUrls}
         />
       )}
-      {product.sold && <div className={styles.soldOutOverlay} />}
     </div>
   );
 }

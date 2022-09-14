@@ -1,0 +1,22 @@
+.button {
+  border: none;
+  background-color: transparent;
+  padding: 16px;
+  padding-left: 0;
+}
+
+.link {
+  margin-right: 10px;
+  padding: 16px;
+  padding-left: 0;
+}
+
+.icon {
+  color: var(--detailsColor);
+  height: 20px;
+  width: 20px;
+}
+
+.after {
+  color: var(--aVeryNiceBlue);
+}

@@ -2,6 +2,7 @@ import { FC } from "react";
 import styles from './productDetails.module.css';
 import { ProductListItem } from "../../redux/store";
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
+import InquireProduct from "../InquireProduct/InquireProduct";
 
 
 export interface ProductDetailsProps {
@@ -27,6 +28,7 @@ const ProductDetails: FC<ProductDetailsProps> = props => {
       {!!product.description3 && (
         <p className={styles.details}>{product.description3}</p>
       )}
+      <InquireProduct product={product}/>
     </div>
   );
 }
