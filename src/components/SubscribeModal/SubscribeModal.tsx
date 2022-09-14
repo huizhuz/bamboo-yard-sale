@@ -6,6 +6,7 @@ import styles from './subscribeModal.module.css';
 
 export interface SubscribeModalProps {
   product: ProductListItem;
+  messageBody?: string;
   closeModal: () => void;
 }
 
@@ -31,9 +32,9 @@ const initialFormValues: SubscribeModalFormValues = {
 // TODO: form validation
 
 const SubscribeModal: FC<SubscribeModalProps> = props => {
-  const { product, closeModal } = props;
+  const { product, closeModal, messageBody } = props;
 
-  const [formValues, setFormValues] = useState(initialFormValues);
+  const [formValues, setFormValues] = useState({...initialFormValues, comments: messageBody || ''});
 
   const sendEmail = async (emailPayload: EmailPayload) => {
     // TODO: integrate email service

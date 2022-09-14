@@ -20,7 +20,11 @@ const ProductDetails: FC<ProductDetailsProps> = props => {
         product={product}
         retrieveImgUrls={props.retrieveImgUrls}
       />
-      <p className={styles.price}>{`$${product.adoptionFee}`}</p>
+      <div className={styles.priceAndMessageWrapper}>
+        <p className={styles.price}>{`$${product.adoptionFee}`}</p>
+        <InquireProduct product={product} />
+      </div>
+
       <p className={styles.details}>{product.description}</p>
       {!!product.description2 && (
         <p className={styles.details}>{product.description2}</p>
@@ -28,7 +32,6 @@ const ProductDetails: FC<ProductDetailsProps> = props => {
       {!!product.description3 && (
         <p className={styles.details}>{product.description3}</p>
       )}
-      <InquireProduct product={product}/>
     </div>
   );
 }
