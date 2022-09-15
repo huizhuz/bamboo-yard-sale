@@ -16,10 +16,11 @@ const ProductDetails: FC<ProductDetailsProps> = props => {
 
   return (
     <div>
-      <ImageCarousel
+      {(product.imagePaths?.length || 0) > 1 && (<ImageCarousel
         product={product}
         retrieveImgUrls={props.retrieveImgUrls}
       />
+      )}
       <div className={styles.priceAndMessageWrapper}>
         <p className={styles.price}>{`$${product.adoptionFee}`}</p>
         <InquireProduct product={product} />

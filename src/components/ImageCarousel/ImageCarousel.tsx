@@ -34,7 +34,7 @@ const ImageCarousel: FC<ImageCarouselProps> = props => {
         <Carousel
           draggable={false}
           value={imageIndex}
-          slides={imgUrls?.map((url, index) => {
+          slides={imgUrls?.filter(url => !url?.includes('_1'))?.map((url, index) => {
             return (
               <div className={styles.imageWrapper} key={`image-${index}`}>
                 <img className={styles.img} src={url}></img>
@@ -48,7 +48,7 @@ const ImageCarousel: FC<ImageCarouselProps> = props => {
           value={imageIndex}
           onChange={onChange}
           number={imgUrls?.length}
-          thumbnails={imgUrls?.map((url, index) => {
+          thumbnails={imgUrls?.filter(url => !url?.includes('_1'))?.map((url, index) => {
             return (
               <div className={styles.thumbnailsImageWrapper} key={`thumbnail-${index}`}>
                 <img className={styles.thumbnailsImage} src={url}></img>
