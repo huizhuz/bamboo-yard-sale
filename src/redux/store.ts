@@ -25,7 +25,7 @@ export interface ProductListItem {
 }
 
 export enum FilterBy {
-  instruments = '乐器',
+  music = '音乐',
   toys = '玩具',
   kitchenUtil = '厨具',
   appliances = '电器',
